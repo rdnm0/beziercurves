@@ -4,10 +4,10 @@ matplotlib Path forked from torresjrjr
 Path fork // animations tweaked / added
 
 HOW TO USE - 
-pip install matplotlib numpy
+pip install matplotlib numpy //
 to run in intwindow - pip install ipykernel
 
-from Bezier import Bezier
+from Bezier import Bezier //
 import numpy as np
 
 2D example -
