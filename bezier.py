@@ -6,8 +6,8 @@ from matplotlib import animation,rc,transforms
 rc('animation', html='jshtml')
 plt.rcParams.update({"font.family" : "serif","mathtext.fontset" : "cm"})
 
-#prameters
-Nf = 200 #number of animation frames
+
+Nf = 200 
 theta = np.linspace(0,360,Nf) #angle to rotate
 alpha=np.concatenate((np.linspace(0,np.pi/2,int(Nf/2)),np.linspace(np.pi/2,0,int(Nf/2))))
 cls = ['r','lightgreen','b','c','yellow','orange','m','maroon','darkgreen','lightblue','pink','crimson','teal']
@@ -21,7 +21,7 @@ ax2.axis('off')
 P0 = (0.25,0)
 P3= (0.75,0)
 
-def animate(i): # animation function.  This is called sequentially
+def animate(i): 
   ax1.clear()
   ax2.clear()
   P1 = (0.25*np.cos(x[i]*2*np.pi) + 0.25, 0.9*np.sin(x[i]*2*np.pi))
@@ -42,8 +42,6 @@ def animate(i): # animation function.  This is called sequentially
   return
 
 anim = animation.FuncAnimation(fig, animate, frames=Nf, interval=50)
-# anim #uncomment to generate animation in the output area
-# to save the animation, uncomment the following three lines
 fn = r"BezierCurveCubic.mp4" 
-writervideo = animation.FFMpegWriter(fps=50) #save the video at 50 frames per sec
+writervideo = animation.FFMpegWriter(fps=50) 
 anim.save(fn, writer=writervideo,dpi = 120)
